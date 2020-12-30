@@ -7,6 +7,8 @@ key = RSA.import_key(open('private.pem').read())
 h = SHA256.new(message)
 signature = pkcs1_15.new(key).sign(h)
 
+# Sender needs to send: public key, message, signature. 
+# The hash needs to be computed by the receiver
 
 key = RSA.import_key(open('public.pem').read())
 h = SHA256.new(message)
